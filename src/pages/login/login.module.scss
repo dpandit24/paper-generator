@@ -1,0 +1,133 @@
+$base_color : #986060;
+
+.loginContainer {
+    // width: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 655px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo span {
+    font-size: 25px;
+    margin-left: 5px;
+    text-align: center;
+    color: $base_color;
+}
+
+.socialLogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.leftContainer,
+.rightContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.loginForm,
+.welcomeContainer {
+    // display: flex;
+    // flex-direction: column;
+    // max-width: 400px;
+    // width: 100%;
+    // text-align: center;
+    // padding: 120px;
+    // margin: auto;
+    // justify-content: center;
+    // max-width: 100%;
+    text-align: center;
+}
+
+.loginForm .infoText {
+    color: #AEAEAE;
+}
+
+.loginForm {
+    line-height: 2;
+    width: 300px
+}
+
+.loginForm input{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 6px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background-color: #f1f1f1;
+    color: #242424;
+    outline: none;
+    border: none;
+
+    @media (max-width: 768px) {
+        width: 50vw;
+    }
+}
+
+.loginForm button{
+    font-size: 15px;
+    font-weight: bold;
+    background-color: $base_color;
+    color: #f1f1f1;
+    padding: 10px 45px;
+    border-radius: 50px;
+    border: none;
+}
+
+.loginForm form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightContainer{
+    background-color: $base_color;
+}
+
+.welcomeContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 2;
+    color: #f1f1f1;
+}
+
+.welcomeContainer .titleText{
+    font-size: 25px;
+    flex-wrap: wrap;
+}
+
+.welcomeContainer .secondoryText{
+    font-size: 15px;
+    flex-wrap: wrap;
+}
+
+.welcomeContainer button{
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #f1f1f1;
+    color: $base_color;
+    padding: 10px 45px;
+    margin-top: 10px;
+    border-radius: 50px;
+    border: none;
+}
+
+@media (min-width: 768px) {
+    .leftContainer,
+    .rigthContainer {
+        flex: 1;
+    }
+}
