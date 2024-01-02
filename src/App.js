@@ -1,9 +1,16 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Home, Login, Register, Dashboard } from './pages';
 import './App.css';
-import { Login, Register } from './pages';
 
 function App() {
   return (
-    <Login />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />}/>
+        <Route path='/dashboard' element={<Dashboard />}/>
+        <Route path='/login' element={<Login />}/>
+      </Routes>
+    </BrowserRouter>
     // <Register />
   );
 }
