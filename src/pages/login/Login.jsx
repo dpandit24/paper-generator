@@ -27,7 +27,7 @@ const socialLogo = (
   </div>
 );
 
-const Login = () => {
+const Login = ({onLogin}) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate()
@@ -62,7 +62,8 @@ const Login = () => {
         showConfirmButton: true,
       }).then((result) => {
         if (result.isConfirmed) {
-          navigate('/dashboard'); 
+          onLogin(username)
+          navigate('/dashboard')
         }
       });
 
