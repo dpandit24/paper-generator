@@ -1,14 +1,25 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Home, Login, Register, Dashboard } from './pages';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [username, setUserName] = useState('')
+
+  const handleLogin = (user) => {
+    setUserName(user)
+  }
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />}/>
-        <Route path='/dashboard' element={<Dashboard />}/>
-        <Route path='/login' element={<Login />}/>
+        <Route path='/login' element={<Login onLogin={handleLogin} />}/>
+        <Route path='/dashboard' element={
+          <ProtectedRoute username={username}>
+            <Dashboard />
+          </ProtectedRoute>
+        }/>
       </Routes>
     </BrowserRouter>
     // <Register />
@@ -16,3 +27,12 @@ function App() {
 }
 
 export default App;
+
+export const ProtectedRoute = ({username, children}) => {
+  if(username){
+    return children
+  }else {
+    alert("Protected Route")
+    return <Navigate to='/'/>
+  }
+}
